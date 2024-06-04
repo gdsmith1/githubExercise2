@@ -12,4 +12,24 @@ jobs:
         runs-on: self-hosted
         steps:
             - name: Hello World
-              run: echo "Hello World"
+              run: echo "Hello World" >> hello.txt
+
+
+            - name: Add hello.txt to artifacts
+              uses: actions/upload-artifact@v4
+              with:
+                name: hello
+                path: hello.txt
+
+    artifactReader:
+        runs-on: self-hosted
+        needs: helloworld
+        steps:
+            - name: Download artifact
+              uses: actions/download-artifact@v4
+              with:
+                name: hello
+                path: .
+
+            - name: Read artifact
+              run: cat hello.txt
