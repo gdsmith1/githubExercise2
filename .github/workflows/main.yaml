@@ -34,7 +34,5 @@ jobs:
             - name: Read artifact
               run: cat hello.txt
 
-            - name: Read artifact
-              run: |
-                content=$(cat hello.txt)
-                echo "HELLO_CONTENT=$content" >> $GITHUB_ENV
+            - name: Put hello.txt in an environment variable
+              run: echo "HELLO=$(cat hello.txt)" >> $GITHUB_ENV
