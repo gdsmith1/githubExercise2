@@ -1,0 +1,15 @@
+#runs-on: self-hosted #GOES IN EACH JOB
+
+
+name: CI
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+jobs:
+    helloworld:
+        runs-on: self-hosted
+        steps:
+            - name: Hello World
+              run: echo "Hello World"
