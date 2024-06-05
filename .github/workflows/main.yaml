@@ -36,10 +36,10 @@ jobs:
         runs-on: self-hosted
         steps:
             - name: Hello World
-              run: echo "Hello World" >> hello.txt
+              run: echo "Hello World" >> oldhello.txt
 
 
-            - name: Add hello.txt to artifacts
+            - name: Add oldhello.txt to artifacts
               uses: actions/upload-artifact@v4
               with:
                 name: oldhello
