@@ -8,6 +8,30 @@ on:
     branches:
       - main
 jobs:
+
+    newjob:
+        runs-on: self-hosted
+        steps:
+          - name: Use my action
+            uses: gdsmith1/githubExercise2/.github/actions@v6
+            with:
+              user-input: 'Hello world!'
+              
+          - name: Download artifact
+            uses: actions/download-artifact@v4
+            with:
+              name: hello
+              path: .
+          
+          - name: Read artifact
+            run: cat hello.txt
+
+
+
+
+
+
+
     helloworld:
         runs-on: self-hosted
         steps:
