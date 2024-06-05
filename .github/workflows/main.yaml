@@ -13,14 +13,14 @@ jobs:
         runs-on: self-hosted
         steps:
           - name: Use my action
-            uses: gdsmith1/githubExercise2/.github/actions@v6
+            uses: gdsmith1/githubExercise2/.github/actions@v7
             with:
               user-input: 'Hello world!'
               
           - name: Download artifact
             uses: actions/download-artifact@v4
             with:
-              name: hello
+              name: hello2
               path: .
           
           - name: Read artifact
