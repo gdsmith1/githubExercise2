@@ -43,7 +43,7 @@ jobs:
               uses: actions/upload-artifact@v4
               with:
                 name: oldhello
-                path: hello.txt
+                path: oldhello.txt
 
     artifactReader:
         runs-on: self-hosted
@@ -56,11 +56,11 @@ jobs:
                 path: .
 
             - name: Read artifact
-              run: cat hello.txt
+              run: cat oldhello.txt
 
             - name: Put hello.txt in an environment variable
               run: |
-                value=`cat hello.txt`
+                value=`cat oldhello.txt`
                 echo "HELLO=value" >> $GITHUB_ENV
 
             - name: Print environment variable
