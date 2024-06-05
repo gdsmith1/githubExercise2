@@ -36,5 +36,5 @@ jobs:
 
             - name: Put hello.txt in an environment variable
               run: |
-                value= `cat hello.txt`
+                value=`cat hello.txt`
                 echo "HELLO=value" >> $GITHUB_ENV
