@@ -13,7 +13,7 @@ jobs:
         runs-on: self-hosted
         steps:
           - name: Use my action
-            uses: gdsmith1/githubExercise2/.github/actions@v8
+            uses: gdsmith1/githubExercise2/.github/actions@v9
             with:
               user-input: 'Hello world!'
               
@@ -21,7 +21,7 @@ jobs:
             uses: actions/download-artifact@v4
             with:
               name: hello2
-              path: hello.txt
+              path: .
           
           - name: Read artifact
             run: cat hello.txt
