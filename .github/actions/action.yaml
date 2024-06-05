@@ -15,7 +15,7 @@ runs:
         USER_INPUT: ${{ inputs.user-input }}
 
     - name: Create txt file
-      run: echo "$USER_INPUT" >> hello.txt
+      run: echo "$USER_INPUT" > hello.txt
       shell: bash
 
     - name: Upload Artifact
